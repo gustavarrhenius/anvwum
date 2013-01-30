@@ -29,7 +29,6 @@ class MySQL extends Connector {
 		{
 			$dsn .= ";unix_socket={$config['unix_socket']}";
 		}
-
 		$connection = new PDO($dsn, $username, $password, $this->options($config));
 
 		// If a character set has been specified, we'll execute a query against

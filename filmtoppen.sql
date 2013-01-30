@@ -23,21 +23,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `laravel_actors`
+-- Table structure for table `actors`
 --
 
-DROP TABLE IF EXISTS `laravel_actors`;
-CREATE TABLE IF NOT EXISTS `laravel_actors` (
+DROP TABLE IF EXISTS `actors`;
+CREATE TABLE IF NOT EXISTS `actors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
 --
--- Dumping data for table `laravel_actors`
+-- Dumping data for table `actors`
 --
 
-INSERT INTO `laravel_actors` (`id`, `name`) VALUES
+INSERT INTO `actors` (`id`, `name`) VALUES
 (1, 'Tim Robbins'),
 (2, 'Morgan Freeman'),
 (3, 'Bob Gunton'),
@@ -75,21 +75,21 @@ INSERT INTO `laravel_actors` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `laravel_categorys`
+-- Table structure for table `categorys`
 --
 
-DROP TABLE IF EXISTS `laravel_categorys`;
-CREATE TABLE IF NOT EXISTS `laravel_categorys` (
+DROP TABLE IF EXISTS `categorys`;
+CREATE TABLE IF NOT EXISTS `categorys` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
--- Dumping data for table `laravel_categorys`
+-- Dumping data for table `categorys`
 --
 
-INSERT INTO `laravel_categorys` (`id`, `name`) VALUES
+INSERT INTO `categorys` (`id`, `name`) VALUES
 (1, 'Crime'),
 (2, 'Drama'),
 (3, 'Adventure'),
@@ -105,21 +105,21 @@ INSERT INTO `laravel_categorys` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `laravel_directors`
+-- Table structure for table `directors`
 --
 
-DROP TABLE IF EXISTS `laravel_directors`;
-CREATE TABLE IF NOT EXISTS `laravel_directors` (
+DROP TABLE IF EXISTS `directors`;
+CREATE TABLE IF NOT EXISTS `directors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
 
 --
--- Dumping data for table `laravel_directors`
+-- Dumping data for table `directors`
 --
 
-INSERT INTO `laravel_directors` (`id`, `name`) VALUES
+INSERT INTO `directors` (`id`, `name`) VALUES
 (34, 'Frank Darabont'),
 (35, 'Francis Ford Coppola'),
 (36, 'Sergio Leone'),
@@ -135,11 +135,11 @@ INSERT INTO `laravel_directors` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `laravel_films`
+-- Table structure for table `films`
 --
 
-DROP TABLE IF EXISTS `laravel_films`;
-CREATE TABLE IF NOT EXISTS `laravel_films` (
+DROP TABLE IF EXISTS `films`;
+CREATE TABLE IF NOT EXISTS `films` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(45) DEFAULT NULL,
   `plot` varchar(255) DEFAULT NULL,
@@ -149,10 +149,10 @@ CREATE TABLE IF NOT EXISTS `laravel_films` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
--- Dumping data for table `laravel_films`
+-- Dumping data for table `films`
 --
 
-INSERT INTO `laravel_films` (`id`, `title`, `plot`, `releasedYear`, `rating`) VALUES
+INSERT INTO `films` (`id`, `title`, `plot`, `releasedYear`, `rating`) VALUES
 (1, 'The Shawshank Redemption', 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.', 1994, '0.00'),
 (2, 'The Godfather', 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.', 1972, '0.00'),
 (3, 'The Godfather: Part II', 'The early life and career of Vito Corleone in 1920s New York is portrayed while his son, Michael, expands and tightens his grip on his crime syndicate stretching from Lake Tahoe, Nevada to pre-revolution 1958 Cuba.', 1974, '0.00'),
@@ -169,11 +169,11 @@ INSERT INTO `laravel_films` (`id`, `title`, `plot`, `releasedYear`, `rating`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `laravel_films_has_actors`
+-- Table structure for table `films_has_actors`
 --
 
-DROP TABLE IF EXISTS `laravel_films_has_actors`;
-CREATE TABLE IF NOT EXISTS `laravel_films_has_actors` (
+DROP TABLE IF EXISTS `films_has_actors`;
+CREATE TABLE IF NOT EXISTS `films_has_actors` (
   `filmID` int(11) NOT NULL,
   `actorID` int(11) NOT NULL,
   PRIMARY KEY (`filmID`,`actorID`),
@@ -182,10 +182,10 @@ CREATE TABLE IF NOT EXISTS `laravel_films_has_actors` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `laravel_films_has_actors`
+-- Dumping data for table `films_has_actors`
 --
 
-INSERT INTO `laravel_films_has_actors` (`filmID`, `actorID`) VALUES
+INSERT INTO `films_has_actors` (`filmID`, `actorID`) VALUES
 (1, 1),
 (1, 2),
 (1, 3),
@@ -223,11 +223,11 @@ INSERT INTO `laravel_films_has_actors` (`filmID`, `actorID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `laravel_films_has_categorys`
+-- Table structure for table `films_has_categorys`
 --
 
-DROP TABLE IF EXISTS `laravel_films_has_categorys`;
-CREATE TABLE IF NOT EXISTS `laravel_films_has_categorys` (
+DROP TABLE IF EXISTS `films_has_categorys`;
+CREATE TABLE IF NOT EXISTS `films_has_categorys` (
   `filmID` int(11) NOT NULL,
   `categoryID` int(11) NOT NULL,
   PRIMARY KEY (`filmID`,`categoryID`),
@@ -236,10 +236,10 @@ CREATE TABLE IF NOT EXISTS `laravel_films_has_categorys` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `laravel_films_has_categorys`
+-- Dumping data for table `films_has_categorys`
 --
 
-INSERT INTO `laravel_films_has_categorys` (`filmID`, `categoryID`) VALUES
+INSERT INTO `films_has_categorys` (`filmID`, `categoryID`) VALUES
 (1, 1),
 (1, 2),
 (2, 1),
@@ -272,11 +272,11 @@ INSERT INTO `laravel_films_has_categorys` (`filmID`, `categoryID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `laravel_films_has_directors`
+-- Table structure for table `films_has_directors`
 --
 
-DROP TABLE IF EXISTS `laravel_films_has_directors`;
-CREATE TABLE IF NOT EXISTS `laravel_films_has_directors` (
+DROP TABLE IF EXISTS `films_has_directors`;
+CREATE TABLE IF NOT EXISTS `films_has_directors` (
   `filmID` int(11) NOT NULL,
   `directorID` int(11) NOT NULL,
   PRIMARY KEY (`filmID`,`directorID`),
@@ -285,10 +285,10 @@ CREATE TABLE IF NOT EXISTS `laravel_films_has_directors` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `laravel_films_has_directors`
+-- Dumping data for table `films_has_directors`
 --
 
-INSERT INTO `laravel_films_has_directors` (`filmID`, `directorID`) VALUES
+INSERT INTO `films_has_directors` (`filmID`, `directorID`) VALUES
 (1, 34),
 (2, 35),
 (3, 35),

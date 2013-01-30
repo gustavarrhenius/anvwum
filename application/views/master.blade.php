@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Filmtoppen</title>
 	<meta name="viewport" content="width=device-width">
+	{{HTML::style('css/style.css')}}
 </head>
     <body>
         <div class='header'>
@@ -15,10 +16,15 @@
             <li>About</li>
         </ul>   
      <div class='container'> 
-        @yield('content') 
+     	<div class="row-fluid">
+	     	<div class="span6">
+		     	@yield('content') 
+	     	</div>
+     	</div> 
      </div>
         <footer>
         @yield('footer')
         </footer>
     </body>
+    {{HTML::script('bootstrap/js/bootstrap.js')}}
 </html>

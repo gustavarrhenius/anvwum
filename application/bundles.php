@@ -34,7 +34,10 @@
 */
 
 return array(
-
+	'laraveless' => array(
+        'auto' => true,
+    ),
+    
 	'docs' => array('handles' => 'docs'),
-
 );
+

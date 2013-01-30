@@ -1,0 +1,6 @@
+@import url("../bootstrap/css/bootstrap.css");
+.container { width:980px; }
+body {
+  color:#000000;
+  background:#999999;
+}
