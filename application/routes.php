@@ -34,11 +34,14 @@
 
 Route::get('/', function()
 {
-	return View::make('home.index');
+  
+    $actors = Actor::all();
+    //dd($actors);
+    //return $actors->name;
+	return View::make('home.index')->with('actors', $actors);
+	//return View::make('home.index');
+
 });
-
-
-
 
 /*
 |--------------------------------------------------------------------------
